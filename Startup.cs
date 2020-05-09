@@ -10,7 +10,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using MvcCustomerManager.Models;
+using MvcCustomerManager.Repositories;
 using MvcCustomerManager.Repositories.Impl;
+using MvcCustomerManager.Services;
+using MvcCustomerManager.Services.Impl;
 namespace MvcCustomerManager
 {
     public class Startup
@@ -26,10 +29,13 @@ namespace MvcCustomerManager
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            string connectionString = @"Server=localhost;Database=CustomerManager;user id=sa;password=reallyStrongPwd123;Trusted_Connection=false;ConnectRetryCount=0";
+            string connectionString = @"Server=localhost;Database=CustomerManager1;user id=sa;password=reallyStrongPwd123;Trusted_Connection=false;ConnectRetryCount=0";
             services.AddDbContext<DataContext>(option => option.UseSqlServer(connectionString));
             services.AddControllersWithViews();
-            services.AddScoped<CustomerRepositoryImpl>();
+            services.AddScoped<ICustomerRepository, CustomerRepositoryImpl>();
+            services.AddScoped<IProvinceRepository, ProvinceRepositoryImpl>();
+            services.AddScoped<ICustomerService, CustomerServiceImpl>();
+            services.AddScoped<IProvinceService, ProvinceServiceImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

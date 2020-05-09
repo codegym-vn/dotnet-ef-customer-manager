@@ -38,6 +38,21 @@ namespace MvcCustomerManager.Migrations
 
                     b.ToTable("Customers");
                 });
+
+            modelBuilder.Entity("MvcCustomerManager.Models.Province", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Provinces");
+                });
 #pragma warning restore 612, 618
         }
     }

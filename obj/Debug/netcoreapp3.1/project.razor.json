@@ -20521,6 +20521,16 @@
   "RootNamespace": "MvcCustomerManager",
   "Documents": [
     {
+      "FilePath": "/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/Views/Province/Delete.cshtml",
+      "TargetPath": "Views\\Province\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/Views/Province/Create.cshtml",
+      "TargetPath": "Views\\Province\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/Views/Customer/Create.cshtml",
       "TargetPath": "Views\\Customer\\Create.cshtml",
       "FileKind": "mvc"
@@ -20541,6 +20551,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/Views/Province/Edit.cshtml",
+      "TargetPath": "Views\\Province\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/Views/Customer/Delete.cshtml",
       "TargetPath": "Views\\Customer\\Delete.cshtml",
       "FileKind": "mvc"
@@ -20553,6 +20568,11 @@
     {
       "FilePath": "/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/Views/Province/Index.cshtml",
+      "TargetPath": "Views\\Province\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

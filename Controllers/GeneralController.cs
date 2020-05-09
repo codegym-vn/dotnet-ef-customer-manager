@@ -1,30 +1,30 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MvcCustomerManager.Repositories;
+using MvcCustomerManager.Services;
 using MvcCustomerManager.Models;
 
 namespace MvcCustomerManager.Controllers
 {
-    public abstract class GeneralController<TEntity, TRepository> : Controller
+    public abstract class GeneralController<TEntity, TService> : Controller
         where TEntity : class
-        where TRepository : IGeneralRepository<TEntity>
+        where TService : IGeneralService<TEntity>
     {
-        private readonly TRepository repository;
+        private readonly TService service;
 
-        public GeneralController(TRepository repository)
+        public GeneralController(TService service)
         {
-            this.repository = repository;
+            this.service = service;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TEntity>>> Index()
         {
-            return View(await repository.GetAll());
+            return View(await service.GetAll());
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public virtual IActionResult Create()
         {
             return View();
         }
@@ -34,7 +34,7 @@ namespace MvcCustomerManager.Controllers
         {
             if (ModelState.IsValid)
             {
-                await repository.Add(t);
+                await service.Add(t);
                 return RedirectToAction(nameof(Create));
             }
             return View(t);
@@ -43,7 +43,7 @@ namespace MvcCustomerManager.Controllers
         [HttpGet]
         public async Task<ActionResult<TEntity>> Edit(int id)
         {
-            var t = await repository.Get(id);
+            var t = await service.Get(id);
             if (t == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace MvcCustomerManager.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id, TEntity t)
         {
-            await repository.Update(t);
+            await service.Update(t);
             return View(t);
         }
 
@@ -67,7 +67,7 @@ namespace MvcCustomerManager.Controllers
                 return NotFound();
             }
 
-            var t = await repository.Get(id);
+            var t = await service.Get(id);
             if (t == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace MvcCustomerManager.Controllers
         [HttpPost]
         public async Task<ActionResult<TEntity>> DeleteConfirm(int id)
         {
-            var t = await repository.Delete(id);
+            var t = await service.Delete(id);
             if (t == null)
             {
                 return NotFound();

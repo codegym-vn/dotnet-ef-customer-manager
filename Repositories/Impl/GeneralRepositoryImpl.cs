@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace MvcCustomerManager.Repositories.Impl
 {
-    public abstract class GeneralRepositoryImpl<TEntity, TContext> : IGeneralRepository<TEntity>
+    public abstract class GeneralRepositoryImpl<TEntity, TContext> 
     where TEntity : class
     where TContext : DbContext
     {

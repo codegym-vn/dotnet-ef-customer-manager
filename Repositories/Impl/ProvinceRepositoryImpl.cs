@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace MvcCustomerManager.Repositories.Impl
 {
-    public class CustomerRepositoryImpl : GeneralRepositoryImpl<Customer, DataContext>, ICustomerRepository
+    public class ProvinceRepositoryImpl : GeneralRepositoryImpl<Province, DataContext>, IProvinceRepository
     {
-        public CustomerRepositoryImpl(DataContext context) : base(context)
+        public ProvinceRepositoryImpl(DataContext context) : base(context)
         {
 
         }

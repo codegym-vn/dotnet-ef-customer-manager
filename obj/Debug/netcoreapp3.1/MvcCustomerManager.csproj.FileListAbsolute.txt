@@ -9,7 +9,6 @@
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/MvcCustomerManager.TagHelpers.input.cache
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/MvcCustomerManager.TagHelpers.output.cache
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/MvcCustomerManager.RazorCoreGenerate.cache
-/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Customer/Create.cshtml.g.cs
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
@@ -68,3 +67,8 @@
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Customer/Index.cshtml.g.cs
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Customer/Edit.cshtml.g.cs
 /Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Customer/Delete.cshtml.g.cs
+/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Province/Create.cshtml.g.cs
+/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Province/Delete.cshtml.g.cs
+/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Province/Edit.cshtml.g.cs
+/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Province/Index.cshtml.g.cs
+/Users/nguyenkhanhtung/Documents/NET2020/WBCS/MvcCustomerManager/obj/Debug/netcoreapp3.1/Razor/Views/Customer/Create.cshtml.g.cs

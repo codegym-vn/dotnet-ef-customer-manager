@@ -9,8 +9,8 @@ using MvcCustomerManager.Models;
 namespace MvcCustomerManager.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200505073525_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20200509104540_SecondMigration")]
+    partial class SecondMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,6 +39,21 @@ namespace MvcCustomerManager.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("MvcCustomerManager.Models.Province", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Provinces");
                 });
 #pragma warning restore 612, 618
         }
