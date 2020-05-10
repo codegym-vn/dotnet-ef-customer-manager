@@ -34,7 +34,12 @@ namespace MvcCustomerManager.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ProvinceId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ProvinceId");
 
                     b.ToTable("Customers");
                 });
@@ -52,6 +57,15 @@ namespace MvcCustomerManager.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Provinces");
+                });
+
+            modelBuilder.Entity("MvcCustomerManager.Models.Customer", b =>
+                {
+                    b.HasOne("MvcCustomerManager.Models.Province", "Province")
+                        .WithMany("Customers")
+                        .HasForeignKey("ProvinceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -24,7 +24,7 @@ namespace MvcCustomerManager.Controllers
         }
 
         [HttpGet]
-        public virtual IActionResult Create()
+        public virtual async Task<IActionResult> Create()
         {
             return View();
         }
@@ -62,7 +62,7 @@ namespace MvcCustomerManager.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return NotFound();
             }

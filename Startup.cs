@@ -29,7 +29,7 @@ namespace MvcCustomerManager
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            string connectionString = @"Server=localhost;Database=CustomerManager1;user id=sa;password=reallyStrongPwd123;Trusted_Connection=false;ConnectRetryCount=0";
+            string connectionString = @"Server=localhost;Database=CustomerManager3;user id=sa;password=reallyStrongPwd123;Trusted_Connection=false;ConnectRetryCount=0";
             services.AddDbContext<DataContext>(option => option.UseSqlServer(connectionString));
             services.AddControllersWithViews();
             services.AddScoped<ICustomerRepository, CustomerRepositoryImpl>();

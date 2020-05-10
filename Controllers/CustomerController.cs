@@ -5,30 +5,31 @@ using MvcCustomerManager.Models;
 using MvcCustomerManager.Repositories.Impl;
 using MvcCustomerManager.Services;
 using System.Threading.Tasks;
+using MvcCustomerManager.Repositories;
 
 namespace MvcCustomerManager.Controllers
 {
     public class CustomerController : GeneralController<Customer, ICustomerService>
     {
 
-        public CustomerController(ICustomerService service) : base(service)
+        /*public CustomerController(ICustomerService service) : base(service)
         {
 
-        }
+        }*/
 
-        /*private IProvinceRepository provinceRepositoryImpl;
-        public CustomerController(ICustomerRepository repository, [FromServices] IProvinceRepository provinceRepositoryImpl) 
-            : base(repository)
+        private IProvinceService provinceServiceImpl;
+        public CustomerController(ICustomerService service, [FromServices] IProvinceService provinceServiceImpl) 
+            : base(service)
         {
-            this.provinceRepositoryImpl = provinceRepositoryImpl;
+            this.provinceServiceImpl = provinceServiceImpl;
         }
 
         [HttpGet()]
-        public override IActionResult Create()
+        public override async Task<IActionResult> Create()
         {
-            var lst = provinceRepositoryImpl.GetAll();
-            ViewBag.Provinces = lst;
+          
+            ViewBag.Provinces = await provinceServiceImpl.GetAll();
             return View();
-        }*/
+        }
     }
 }

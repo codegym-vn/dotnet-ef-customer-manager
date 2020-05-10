@@ -7,7 +7,7 @@ namespace MvcCustomerManager.Models
         public string Address { get; set; }
         public string Phone { get; set; }
 
-        //public int ProvinceId { get; set; }
-        //public Province Province { get; set; }
+        public int ProvinceId { get; set; }
+        public Province Province { get; set; }
     }
 }
