@@ -2,7 +2,7 @@
 
 namespace MvcCustomerManager.Migrations
 {
-    public partial class SecondMigration : Migration
+    public partial class F : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

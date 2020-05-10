@@ -9,8 +9,8 @@ using MvcCustomerManager.Models;
 namespace MvcCustomerManager.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200509104540_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20200510130311_F")]
+    partial class F
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
