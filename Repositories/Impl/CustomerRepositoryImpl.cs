@@ -2,6 +2,7 @@ using MvcCustomerManager.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MvcCustomerManager.Repositories.Impl
 {
@@ -18,6 +19,13 @@ namespace MvcCustomerManager.Repositories.Impl
             return await context.Customers
                     .Include(c => c.Province)
                     .AsNoTracking().ToListAsync();
+        }
+
+        public async Task<Customer> GetSingleCustomerIncludeProvince(int id)
+        {
+            return await context.Customers.Where(c => c.Id == id)
+                    .Include(c => c.Province)
+                    .AsNoTracking().SingleAsync();
         }
     }
 }

@@ -41,5 +41,17 @@ namespace MvcCustomerManager.Controllers
             var entities = await service.GetCustomersIncludeProvince();
             return View(entities);
         }
+
+        [HttpGet]
+        public override async Task<ActionResult<Customer>> Edit(int id)
+        {
+            ViewBag.Provinces = await provinceServiceImpl.GetAll();
+            var t = await service.GetSingleCustomerIncludeProvince(id);
+            if (t == null)
+            {
+                return NotFound();
+            }
+            return View(t);
+        }
     }
 }

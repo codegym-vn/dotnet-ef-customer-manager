@@ -8,6 +8,9 @@ namespace MvcCustomerManager.Repositories
     {
          Task<List<Customer>> GetCustomersIncludeProvince();
 
+         Task<Customer> GetSingleCustomerIncludeProvince(int id);
+        
+
     }
 
 }

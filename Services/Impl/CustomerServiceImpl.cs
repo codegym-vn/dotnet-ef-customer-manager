@@ -18,5 +18,10 @@ namespace MvcCustomerManager.Services.Impl
         {
             return await repository.GetCustomersIncludeProvince();
         }
+
+        public async Task<Customer> GetSingleCustomerIncludeProvince(int id)
+        {
+            return await repository.GetSingleCustomerIncludeProvince(id);
+        }
     }
 }
