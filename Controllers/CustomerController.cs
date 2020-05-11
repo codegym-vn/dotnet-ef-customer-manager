@@ -46,7 +46,7 @@ namespace MvcCustomerManager.Controllers
         public override async Task<ActionResult<Customer>> Edit(int id)
         {
             ViewBag.Provinces = await provinceServiceImpl.GetAll();
-            var t = await service.GetSingleCustomerIncludeProvince(id);
+            var t = await service.Get(id);
             if (t == null)
             {
                 return NotFound();
