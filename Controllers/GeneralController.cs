@@ -18,7 +18,7 @@ namespace MvcCustomerManager.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TEntity>>> Index()
+        public virtual async Task<ActionResult<IEnumerable<TEntity>>> Index()
         {
             return View(await service.GetAll());
         }
@@ -31,7 +31,7 @@ namespace MvcCustomerManager.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<TEntity>> Create(TEntity t)
+        public virtual async Task<ActionResult<TEntity>> Create(TEntity t)
         {
             if (ModelState.IsValid)
             {
@@ -42,7 +42,7 @@ namespace MvcCustomerManager.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<TEntity>> Edit(int id)
+        public virtual async Task<ActionResult<TEntity>> Edit(int id)
         {
             var t = await service.Get(id);
             if (t == null)
@@ -54,14 +54,14 @@ namespace MvcCustomerManager.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, TEntity t)
+        public virtual async Task<IActionResult> Edit(int id, TEntity t)
         {
             await service.Update(t);
             return View(t);
         }
 
         [HttpGet]
-        public async Task<IActionResult> Delete(int id)
+        public virtual async Task<IActionResult> Delete(int id)
         {
             if (id == 0)
             {
@@ -78,7 +78,7 @@ namespace MvcCustomerManager.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<TEntity>> DeleteConfirm(int id)
+        public virtual async Task<ActionResult<TEntity>> DeleteConfirm(int id)
         {
             var t = await service.Delete(id);
             if (t == null)
