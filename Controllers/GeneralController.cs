@@ -36,9 +36,8 @@ namespace MvcCustomerManager.Controllers
             if (ModelState.IsValid)
             {
                 await service.Add(t);
-                return RedirectToAction(nameof(Create));
             }
-            return View(t);
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
@@ -57,7 +56,7 @@ namespace MvcCustomerManager.Controllers
         public virtual async Task<IActionResult> Edit(int id, TEntity t)
         {
             await service.Update(t);
-            return View(t);
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
