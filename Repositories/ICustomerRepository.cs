@@ -6,6 +6,7 @@ namespace MvcCustomerManager.Repositories
 {
     public interface ICustomerRepository : IGeneralRepository<Customer>
     {
+         Task<List<Customer>> GetCustomersIncludeProvince();
 
     }
 

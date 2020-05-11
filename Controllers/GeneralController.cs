@@ -18,9 +18,10 @@ namespace MvcCustomerManager.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TEntity>>> Index()
+        public virtual async Task<ActionResult<IEnumerable<TEntity>>> Index()
         {
-            return View(await service.GetAll());
+            var entities = await service.GetAll();
+            return View(entities);
         }
 
         [HttpGet]

@@ -18,10 +18,13 @@ namespace MvcCustomerManager.Controllers
         }*/
 
         private IProvinceService provinceServiceImpl;
+        private ICustomerService service;
+
         public CustomerController(ICustomerService service, [FromServices] IProvinceService provinceServiceImpl) 
             : base(service)
         {
             this.provinceServiceImpl = provinceServiceImpl;
+            this.service = service;
         }
 
         [HttpGet()]
@@ -30,6 +33,13 @@ namespace MvcCustomerManager.Controllers
           
             ViewBag.Provinces = await provinceServiceImpl.GetAll();
             return View();
+        }
+
+        [HttpGet]
+        public override async Task<ActionResult<IEnumerable<Customer>>> Index()
+        {
+            var entities = await service.GetCustomersIncludeProvince();
+            return View(entities);
         }
     }
 }
