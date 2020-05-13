@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace MvcCustomerManager.Repositories.Impl
 {
     public class CustomerRepositoryImpl : GeneralRepositoryImpl<Customer, DataContext>, ICustomerRepository
@@ -16,9 +17,9 @@ namespace MvcCustomerManager.Repositories.Impl
 
         public async Task<List<Customer>> GetCustomersIncludeProvince()
         {
-            return await context.Customers
-                    .Include(c => c.Province)
-                    .AsNoTracking().ToListAsync();
+            var s = from c in context.Customers.Include(c => c.Province) select c;
+            return await s.ToListAsync();
+
         }
 
         public async Task<Customer> GetSingleCustomerIncludeProvince(int id)
