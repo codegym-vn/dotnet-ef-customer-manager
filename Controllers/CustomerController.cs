@@ -7,7 +7,6 @@ using MvcCustomerManager.Services;
 using System.Threading.Tasks;
 using MvcCustomerManager.Repositories;
 using System;
-using Microsoft.EntityFrameworkCore;
 
 namespace MvcCustomerManager.Controllers
 {
@@ -56,7 +55,10 @@ namespace MvcCustomerManager.Controllers
 
             ViewData["CurrentFilter"] = searchString;
 
-            IEnumerable<Customer> entities = await service.GetCustomersIncludeProvince();
+            var entitiesService = await service.GetCustomersIncludeProvince();
+            IQueryable<Customer> entities = (IQueryable<Customer>)entitiesService.AsQueryable();
+            
+        
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -76,7 +78,7 @@ namespace MvcCustomerManager.Controllers
                     break;
             }
             int pageSize = 3;
-            return View(await PaginatedList<Customer>.CreateAsync(entities.AsQueryable().AsNoTracking(), pageNumber ?? 1, pageSize));
+            return View(await PaginatedList<Customer>.CreateAsync(entities, pageNumber ?? 1, pageSize));
         }
 
         /*[HttpGet]
