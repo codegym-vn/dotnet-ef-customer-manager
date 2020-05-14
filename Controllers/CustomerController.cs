@@ -7,6 +7,7 @@ using MvcCustomerManager.Services;
 using System.Threading.Tasks;
 using MvcCustomerManager.Repositories;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace MvcCustomerManager.Controllers
 {
@@ -78,7 +79,7 @@ namespace MvcCustomerManager.Controllers
                     break;
             }
             int pageSize = 3;
-            return View(await PaginatedList<Customer>.CreateAsync(entities, pageNumber ?? 1, pageSize));
+            return View(await PaginatedList<Customer>.CreateAsync(entities.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         /*[HttpGet]
