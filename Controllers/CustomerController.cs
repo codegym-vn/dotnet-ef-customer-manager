@@ -57,8 +57,7 @@ namespace MvcCustomerManager.Controllers
             ViewData["CurrentFilter"] = searchString;
 
             var entitiesService = await service.GetCustomersIncludeProvince();
-            IQueryable<Customer> entities = (IQueryable<Customer>)entitiesService.AsQueryable();
-            
+            var entities = entitiesService.AsQueryable();
         
 
             if (!String.IsNullOrEmpty(searchString))
